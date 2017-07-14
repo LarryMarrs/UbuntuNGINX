@@ -6,10 +6,10 @@
 # all commands have standard output a tool that calls the script 
 # should have standard logging for each executing step
 
-sudo apt-get install -y nginx
+apt-get install -y nginx
 
 # ufw  is standard on all  
-sudo ufw allow 'Nginx HTTP'
-sudo ufw enable
-sudo ufw status
+ufw allow 'Nginx HTTP'
+ufw enable
+ufw status
 
