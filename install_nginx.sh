@@ -13,3 +13,12 @@ ufw allow 'Nginx HTTP'
 ufw enable
 ufw status
 
+# Set up example.com on port 3200 
+sudo mkdir /var/www/example
+sudo cp example.html /var/www/example
+sudo cp example /etc/nginx/sites-available/
+sudo ln -s /etc/nginx/sites-available//example /etc/nginx/sites-enabled/example
+ls -la /etc/nginx/sites-enabled/
+
+#### exit with zero "Sucess" when script reaches this point
+exit 0 
