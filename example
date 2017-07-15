@@ -15,6 +15,7 @@ server {
 	index index.html;
 
 	location / {
+		proxy_pass http://172.0.0.1:3400
 		try_files $uri $uri/ =404;
 	}
 }
