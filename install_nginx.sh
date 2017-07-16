@@ -6,12 +6,15 @@
 # all commands have standard output a tool that calls the script 
 # should have standard logging for each executing step
 
-apt-get install -y nginx
+apt-get install -y nginx 
 
-# ufw  is standard on all  
+# ufw  is standard on all Ubuntu Distros  
 ufw allow 'Nginx HTTP'
 ufw enable
 ufw status
+
+ufw allow 3200/tcp
+ufw allow 3400/tcp
 
 # Set up example.com on port 3200 
 mkdir /var/www/example
@@ -19,7 +22,8 @@ cp example.html /var/www/example
 cp example /etc/nginx/sites-available/
 ln -s /etc/nginx/sites-available//example /etc/nginx/sites-enabled/example
 ls -la /etc/nginx/sites-enabled/
-nginx -s reload 
+systemctl reload nginx  
+systemctl enable nginx
 ######
 # ADD FW rules for specified ports in requirements
 
