@@ -21,7 +21,7 @@ mkdir /var/www/example
 cp *.html /var/www/example
 cp example /etc/nginx/sites-available/
 ln -s /etc/nginx/sites-available/example /etc/nginx/sites-enabled/example
-cp 404 /etc/nginx/sites-available/
+#cp 404 /etc/nginx/sites-available/
 #ln -s /etc/nginx/sites-available/404 /etc/nginx/sites-enabled/404
 
 # Check our soft links in output log
