@@ -18,14 +18,18 @@ ufw allow 3400/tcp
 
 # Set up example.com on port 3200 
 mkdir /var/www/example
-cp example.html /var/www/example
+cp *.html /var/www/example
 cp example /etc/nginx/sites-available/
-ln -s /etc/nginx/sites-available//example /etc/nginx/sites-enabled/example
+ln -s /etc/nginx/sites-available/example /etc/nginx/sites-enabled/example
+cp 404 /etc/nginx/sites-available/
+#ln -s /etc/nginx/sites-available/404 /etc/nginx/sites-enabled/404
+
+# Check our soft links in output log
 ls -la /etc/nginx/sites-enabled/
 systemctl reload nginx  
 systemctl enable nginx
 ######
 # ADD FW rules for specified ports in requirements
 
-#### exit with zero "Sucess" when script reaches this point
+#### exit with zero "Success" when script reaches this point
 exit 0 
