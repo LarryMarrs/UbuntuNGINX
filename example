@@ -12,7 +12,7 @@ server {
 	server_name example.com;
 
 	root /var/www/example;
-	index index.html;
+	index example.html;
 
 	location / {
 		proxy_pass http://172.0.0.1:3400;
