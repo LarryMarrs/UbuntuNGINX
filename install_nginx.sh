@@ -11,10 +11,10 @@ apt-get install -y nginx
 # ufw  is standard on all Ubuntu Distros  
 ufw allow 'Nginx HTTP'
 ufw enable
-ufw status
 
 ufw allow 3200/tcp
-ufw allow 3400/tcp
+ufw status
+
 
 # Set up example.com on port 3200 
 mkdir /var/www/example
@@ -28,8 +28,6 @@ ln -s /etc/nginx/sites-available/example /etc/nginx/sites-enabled/example
 ls -la /etc/nginx/sites-enabled/
 systemctl reload nginx  
 systemctl enable nginx
-######
-# ADD FW rules for specified ports in requirements
 
 #### exit with zero "Success" when script reaches this point
 exit 0 
